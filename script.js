@@ -6,11 +6,11 @@ window.addEventListener("scroll", function(){
 
 
 let menu = document.querySelector('#menu-icon');
-let navlinks = document.querySelector('.navlinks');
+let navlist = document.querySelector('.navlist');
 
 menu.onclick = () => {
 	menu.classList.toggle('bx-x');
-	navlinks.classList.toggle('open');
+	navlist.classList.toggle('open');
 } 
 window.onscroll = () => {
     menu.classList.remove('bx-x')

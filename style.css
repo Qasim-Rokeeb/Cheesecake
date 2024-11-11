@@ -11,8 +11,9 @@
 }
 :root{
     --h1-font:4.1rem;
-    --h2-font:2.5rem;
-    --p-font:1rem;
+    --h2-font:3.4rem;
+    --p-font:16px;
+    --other-font:14px;
 
     --bg-color:#FFF8E1;
     --h1-color:#523728;
@@ -28,6 +29,7 @@ header{
     justify-content: space-between;
     z-index: 1000;
     top: 0;
+    right: 0;
     position: fixed;
     width: 100%;
     padding: 0 8%;
@@ -36,7 +38,7 @@ header{
     width: 120px;
 }
 header li a{
-    font-size: 14px;
+    font-size: var(--other-font);
     font-weight: 400;
     color: #fff;
     margin: 10px 10px;
@@ -52,17 +54,25 @@ ul{
     width: 40%;
     background-color: #523728;
     border-radius: 6px;
-    
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #FFF8E1;
 }
-
+.side-bar{
+    display: flex;
+    align-items: center;
+}
+#menu-icon{
+    color: #d3b2a0;
+    display:none;
+    font-size: 24px;
+    margin-left: 12px;
+    z-index: 1001;
+}
 .btn{
     display: inline-block;
-    font-size: 18px;
+    font-size: var(--p-font);
     border-radius: 25px;
     border: 2px solid var(--h1-color);
     color: var(--h1-color);
@@ -107,7 +117,7 @@ section{
     margin-top: 40px;
 }
 .btns .btn{
-    font-size: 15px;
+    font-size: var(--p-font);
     margin-left: 20px;
     line-height: 1.2;
     font-weight: 400;
@@ -117,6 +127,7 @@ section{
     background: var(--h1-color);
     padding: 13px 28px;
     border-radius: 30px;
+    font-size: var(--p-font);
     transition: all .50s ease;
     border: 2px solid var(--h1-color);
     box-shadow: var(--h1-color) 0px 2px 25px;
@@ -132,6 +143,7 @@ section{
 }
 header.sticky{
     background-color: var(--bg-color);
+    
 }
 .about{
     display: grid;
@@ -146,14 +158,14 @@ header.sticky{
     object-fit: contain;
 }
 .about-text h2{
-    font-size: 3.4rem;
+    font-size: var(--h2-font);
     font-family: "Inika", serif;
     font-weight: 500;
     margin: 5px 0;
 }
 .about-text h3{
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 .home-text p{
@@ -170,13 +182,12 @@ header.sticky{
 }
 .menu{
     background-color: #523728;
-    width: 100%;
-    height: 100vh;
+    margin-top: 80px;
     color: var(--h1-color);
 }
 .menu-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
@@ -205,7 +216,7 @@ header.sticky{
    align-items: center;
 }
 .menu-1 h3{
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 18px;
     color: #1d2729;
     
@@ -213,7 +224,7 @@ header.sticky{
     font-weight: 600;
 }
 .menu-1 p{
-    font-size: 14px;
+    font-size: var(--other-font);
     
     color: #555555;
     font-weight: 400;
@@ -245,7 +256,7 @@ header.sticky{
 }
 
 .right p{
-    font-size: 22px;
+    font-size: 20px;
     display: inline;
 }
 .right i{
@@ -268,7 +279,7 @@ header.sticky{
 }
 .blog-items{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     align-items: center;
     justify-content: space-between;
     gap: 2.5rem;
@@ -298,10 +309,10 @@ header.sticky{
     margin: 10px 0 15px 0;
 }
 .blog1 h4{
-   font-size: 22px;
+   font-size: 20px;
 }
 .blog1 h3{
-    font-size: 15px;
+    font-size: var(--other-font);
 }
 .blog1 h6{
     
@@ -321,7 +332,7 @@ header.sticky{
 }
 .contact h1{
     font-family: "Inika", serif;
-    font-size: var(--h2-font);
+    font-size: 2.5rem;
     font-weight: 400;
 }
 .socials{
@@ -380,7 +391,124 @@ header.sticky{
     margin: 10px 0;
     display: block;
     text-align: center;
+    transition: all .50s ease-in;
 }
+
+@media (max-width:1300px){
+    header{
+        padding: 8px 6%;
+    }
+    section{
+        padding: 8px 6%;
+    }
+    
+}
+@media (max-width:1100px){
+    header{
+        padding: 0 20px;
+    }
+    section{
+        padding:8px 30px;
+    }
+    :root{
+        --h1-font:3.6rem;
+        --h2-font:3rem;
+    }
+    .navlist{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        justify-content: space-between;
+        top: 50px;
+        right: 100%;
+        background-color: var(--h1-color);
+        color: #fff;
+        width: 200px;
+        height: 220px;
+    }    
+    .navlist a{
+        font-size: 16px;
+        margin:5px auto;
+    }
+    .navlist.open{
+        right: 10px;
+    }
+    #menu-icon{
+        display: block;
+       
+        
+        
+    }
+}
+@media (max-width:1000px){
+  :root{
+    --h1-font:3.6rem;
+    --h2-font:3.1rem;
+    --p-font:13px;
+    --other-font:12px;
+  }
+  .menu-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    
+  }
+  .blog-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+   
+  }
+}
+@media (max-width:850px){
+    :root{
+        --h1-font:3.2rem;
+        --h2-font:2.8rem;
+        --p-font:13px;
+        --other-font:12px;
+      }
+    .home{
+        display: flex;
+        flex-direction: column;
+        padding: 15% 20px;
+        height: auto;
+    }
+    .logo img{
+        width: 80px;
+    }
+    .home img{
+        
+        max-width: 420px;
+        object-fit: contain;
+        width: 100%;
+    }
+    .about{
+        display: flex;
+        flex-direction: column;
+    }
+    .about img{
+        max-width: 450px;
+        width: 100%;
+        object-fit: contain;
+    }
+    .contact{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+   
+}
+@media (max-width:850px){
+    :root{
+        --h1-font:2.8rem;
+        --h2-font:2.5rem;
+    }
+    .home{
+        padding: 25% 20px 10% 20px; 
+    }
+}
+
+
+
 /*header.sticky{
     padding: 12px 14%;
     background: var(--other-color);
